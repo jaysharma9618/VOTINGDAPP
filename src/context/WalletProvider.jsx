@@ -15,19 +15,19 @@ const Web3StateProvider = ({children}) => {
         try {
             const {contractInstance,chainId,selectedAccount} = await getWeb3State();
         setWeb3State({contractInstance, chainId,selectedAccount});
+        console.log("Wallet connected");
         } catch (error) {
             console.log("Wallet connection fail",error.message);
             
         }
-        
     }
     useEffect(() => {
-        window.ethereum.on('accountsChanged', async (accounts) => {handleAccountChange(setWeb3State)});
-        window.ethereum.on('chainChanged', async (chainIdHex) => {handleChainChange(setWeb3State)});
+        window.ethereum.on('accountsChanged',  () => {handleAccountChange(setWeb3State)});
+        window.ethereum.on('chainChanged',  () => {handleChainChange(setWeb3State)});
 
         return () => {
-            window.ethereum.removeListener('accountsChanged',() => {handleAccountChange(setWeb3State)});
-            window.ethereum.removeListener('ChainChanged',() => {handleChainChange(setWeb3State)});
+            window.ethereum.removeListener('accountsChanged',() => handleAccountChange(setWeb3State));
+            window.ethereum.removeListener('ChainChanged',() => handleChainChange(setWeb3State));
         }
     },[]);
 
