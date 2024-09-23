@@ -1,13 +1,15 @@
 import Web3StateProvider from './context/WalletProvider'
 import './App.css'
-import Child from './Child'
+import CandidateRegistration from './pages/CandidateRegistration/CandidateRegistration'
+import VoterRegistration from './pages/VoterRegistration/VoterRegistration'
 
 function App() {
 
   return (
     <div> 
   <Web3StateProvider>
-      <Child/>
+      {/* <CandidateRegistration /> */}
+      <VoterRegistration />
   </Web3StateProvider>
     </div>
   )
