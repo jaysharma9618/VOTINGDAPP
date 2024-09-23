@@ -1,9 +1,11 @@
-import { web3Context } from "../../context/web3Context";
-import { useContext } from "react";
+// import { web3Context } from "../../context/web3Context";
+// import { useContext } from "react";
 import { useRef } from "react";
+import { useWeb3Context } from "../../context/useWeb3Context";
 
 const CandidateRegistration = () => {
-    const {contractInstance} = useContext(web3Context);
+    // const {contractInstance} = useContext(web3Context); //made a custom hook of useWeb3Context to get the contractInstance
+    const {contractInstance} = useWeb3Context();
     const nameRef = useRef();
     const genderRef = useRef();
     const ageRef = useRef();
