@@ -5,6 +5,7 @@ import DisplayCandidate from "../pages/Candidate/displayCandidate";
 import DisplayVoter from "../pages/Voter/DisplayVoter";
 import CandidateRegistration from "../pages/Candidate/CandidateRegistration";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
+import Electioncommision from "../pages/ElectionCommision/ElectionCommision";
 
 export const routes = createBrowserRouter([
   { path: "/", element: <Wallet /> },
@@ -28,7 +29,14 @@ export const routes = createBrowserRouter([
       </div>
     ),
   },
-  // {path: "election-commision", element:<ElectionCommision/>},
+
+  {path: "election-commision", element: (
+    <div>
+      <NavigationBar />
+      <Electioncommision />
+    </div>
+  ),},
+
   {
     path: "/candidate-list",
     element: (
