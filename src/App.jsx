@@ -1,10 +1,11 @@
 import Web3StateProvider from './context/WalletProvider'
 import './App.css'
-import CandidateRegistration from './pages/CandidateRegistration/CandidateRegistration'
-import VoterRegistration from './pages/VoterRegistration/VoterRegistration'
-import DisplayCandidate from './components/displayCandidate/displayCandidate'
-import DisplayVoter from './components/displayVoter/DisplayVoter'
-
+import CandidateRegistration from './pages/Candidate/CandidateRegistration'
+import VoterRegistration from './pages/Voter/VoterRegistration'
+import DisplayCandidate from './pages/Candidate/displayCandidate'
+import DisplayVoter from './pages/Voter/DisplayVoter'
+import { routes } from './routes/routes'
+import { RouterProvider } from 'react-router-dom'
 function App() {
 
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <CandidateRegistration /> */}
       {/* <VoterRegistration /> */}
       {/* <DisplayCandidate /> */}
-      <DisplayVoter />
+      {/* <DisplayVoter /> */}
+    <RouterProvider router={routes} ></RouterProvider>
   </Web3StateProvider>
     </div>
   )

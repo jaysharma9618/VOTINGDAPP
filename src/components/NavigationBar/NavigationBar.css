@@ -1,0 +1,43 @@
+/* NavigationBar.css */
+
+.navigation-bar {
+    background-color: #2c3e50; /* Dark blue background */
+    padding: 15px 20px; /* Spacing around the links */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.navigation-bar ul {
+    list-style-type: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-around; /* Space out the links */
+}
+
+.navigation-bar li {
+    margin: 0 15px; /* Margin around each link */
+}
+
+.navigation-bar a {
+    color: #ecf0f1; /* Light color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size for links */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.navigation-bar a:hover {
+    color: #af3022; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navigation-bar ul {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center align items */
+    }
+    .navigation-bar li {
+        margin: 10px 0; /* Space out vertically */
+    }
+}
